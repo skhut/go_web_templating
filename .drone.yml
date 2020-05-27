@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: default
+
+workspace:
+  base: /drone/go
+  path: src/github.com/skhut/go_web_templating
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go build
+  - go test
