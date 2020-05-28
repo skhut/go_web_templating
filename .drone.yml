@@ -3,15 +3,21 @@ type: docker
 name: default
 
 clone:
-  default:
-    image: alpine/git
-    skip_verify: true
+  disable: true
 
 workspace:
   base: /drone/go
   path: src/github.com/skhut/go_web_templating
 
-steps:  
+steps:
+- name: clone
+  image: alpine/git
+  skip_verify: true
+  commands:
+  - git config --global http.sslVerify "false"
+  - git clone https://github.com/skhut/go_web_templating .
+  - git checkout $DRONE_COMMIT
+  
 - name: build
   image: golang
   commands:
