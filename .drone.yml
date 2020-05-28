@@ -2,16 +2,16 @@ kind: pipeline
 type: docker
 name: default
 
-clone:
-  default:
-    image: plugins/git
-    skip_verify: true
-
 workspace:
   base: /drone/go
   path: src/github.com/skhut/go_web_templating
 
 steps:
+- name: fetch
+  image: alpine/git
+  commands:
+  - git config --global http.sslVerify "false"
+
 - name: build
   image: golang
   commands:
