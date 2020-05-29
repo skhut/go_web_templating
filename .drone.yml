@@ -27,6 +27,7 @@ steps:
 - name: send
   image: plugins/webhook
   settings:
+    skip_verify: true
     urls: https://outlook.office.com/webhook/9e330e0a-21a3-440b-aba0-1810dd765962@36da45f1-dd2c-4d1f-af13-5abe46b99921/IncomingWebhook/f1cbc608c9e24d56bc9956dd23fed6aa/2c37cfb4-7069-4e60-87dd-c2890a59d874
     content_type: application/json
     template: |
