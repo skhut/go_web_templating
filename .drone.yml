@@ -32,7 +32,7 @@ steps:
     content_type: application/json
     template: |
       {
-        "text": "Build status: Owner: {{ repo.owner }} Repo: {{ repo.name }} Status:  \<color='green'\>{{ build.status }}\<\/color\>",
+        "text": "Build status: Owner: {{ repo.owner }} Repo: {{ repo.name }} Status:  &lt;color='green'&gt;{{ build.status }}&lt;\/color&gt;",
       }    
   when:
     status:
