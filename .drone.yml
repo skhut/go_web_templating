@@ -35,4 +35,5 @@ steps:
         "owner": "{{ repo.owner }}",
         "repo": "{{ repo.name }}",
         "status": "{{ build.status }}",
+        "text": "Go web templating build status: {{ build.status }}",
       }
